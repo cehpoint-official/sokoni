@@ -1,0 +1,20 @@
+import 'package:flutter/material.dart';import 'package:sakuni/core/app_export.dart';import 'package:sakuni/widgets/custom_checkbox_button.dart';import 'package:sakuni/widgets/custom_elevated_button.dart';import 'package:sakuni/widgets/custom_icon_button.dart';import 'package:sakuni/widgets/custom_outlined_button.dart';
+// ignore_for_file: must_be_immutable
+class InfoTwoScreen extends StatelessWidget {InfoTwoScreen({Key? key}) : super(key: key);
+
+bool isCheckbox = false;
+
+@override Widget build(BuildContext context) { mediaQueryData = MediaQuery.of(context); return SafeArea(child: Scaffold(backgroundColor: appTheme.indigo90001, body: SizedBox(width: double.maxFinite, child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [SizedBox(height: getVerticalSize(531), width: double.maxFinite, child: Stack(alignment: Alignment.topRight, children: [CustomImageView(imagePath: ImageConstant.imgRectangle114, height: getVerticalSize(531), width: getHorizontalSize(428), alignment: Alignment.center), CustomOutlinedButton(width: getHorizontalSize(94), height: getVerticalSize(38), text: "Skip", margin: getMargin(top: 26, right: 16), buttonStyle: CustomButtonStyles.outlinePrimary, buttonTextStyle: CustomTextStyles.titleLargeGray50, onTap: () {onTapSkip(context);}, alignment: Alignment.topRight)])), Padding(padding: getPadding(left: 12, top: 21), child: Row(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.start, children: [CustomIconButton(height: 23, width: 23, margin: getMargin(top: 2, bottom: 27), padding: getPadding(all: 3), decoration: IconButtonStyleHelper.fillLightgreenA700, child: CustomImageView(svgPath: ImageConstant.imgCheckmarkPrimary)), Expanded(child: Container(width: getHorizontalSize(368), margin: getMargin(left: 7), child: Text("Lorem ipsum dolor sit amet consectetur adi\npisicing elit. ", maxLines: 2, overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: CustomTextStyles.bodyLargeGray10001)))])), Align(alignment: Alignment.centerLeft, child: CustomCheckboxButton(alignment: Alignment.centerLeft, text: "Lorem ipsum dolor sit amet consectetur. ", iconSize: getHorizontalSize(23), value: isCheckbox, margin: getMargin(left: 12, top: 5, right: 41), textStyle: CustomTextStyles.bodyLargeGray10001, onChange: (value) {isCheckbox = value;})), Padding(padding: getPadding(left: 12, top: 26), child: Row(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.start, children: [CustomIconButton(height: 23, width: 23, margin: getMargin(top: 4, bottom: 25), padding: getPadding(all: 3), decoration: IconButtonStyleHelper.fillLightgreenA700, child: CustomImageView(svgPath: ImageConstant.imgCheckmarkPrimary)), Expanded(child: Container(width: getHorizontalSize(368), margin: getMargin(left: 8), child: Text("Lorem ipsum dolor sit amet consectetur adi\npisicing elit. ", maxLines: 2, overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: CustomTextStyles.bodyLargeGray10001)))])), CustomElevatedButton(width: getHorizontalSize(212), height: getVerticalSize(68), text: "Next", margin: getMargin(top: 36, right: 21, bottom: 5), rightIcon: Container(margin: getMargin(left: 16), child: CustomImageView(svgPath: ImageConstant.imgArrowleft)), buttonStyle: CustomButtonStyles.fillOrange700, buttonTextStyle: CustomTextStyles.titleLargeSemiBold, onTap: () {onTapNext(context);}, alignment: Alignment.centerRight)])))); } 
+/// Navigates to the signInScreen when the action is triggered.
+///
+/// The [BuildContext] parameter is used to build the navigation stack.
+/// When the action is triggered, this function uses the `Navigator` widget
+/// to push the named route for the signInScreen.
+onTapSkip(BuildContext context) { Navigator.pushNamed(context, AppRoutes.signInScreen); } 
+/// Navigates to the infoOneScreen when the action is triggered.
+///
+/// The [BuildContext] parameter is used to build the navigation stack.
+/// When the action is triggered, this function uses the `Navigator` widget
+/// to push the named route for the infoOneScreen.
+onTapNext(BuildContext context) { Navigator.pushNamed(context, AppRoutes.infoOneScreen); } 
+ }
