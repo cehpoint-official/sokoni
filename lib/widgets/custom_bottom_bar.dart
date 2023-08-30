@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:sakuni/core/app_export.dart';
+import 'package:sakuni/presentation/home_tab_container_screen/home_tab_container_screen.dart';
+import 'package:sakuni/presentation/messages_screen/messages_screen.dart';
+import 'package:sakuni/presentation/payment_screen/payment_screen.dart';
+import 'package:sakuni/presentation/profile_screen/profile_screen.dart';
+import 'package:sakuni/presentation/three_bar_screen/three_bar_screen.dart';
 
+// ignore: must_be_immutable
 class CustomBottomBar extends StatefulWidget {
   CustomBottomBar({this.onChanged});
 
@@ -69,35 +75,114 @@ class CustomBottomBarState extends State<CustomBottomBar> {
         elevation: 0,
         currentIndex: selectedIndex,
         type: BottomNavigationBarType.fixed,
-        items: List.generate(bottomMenuList.length, (index) {
-          return BottomNavigationBarItem(
+        items: [
+          BottomNavigationBarItem(
+            label: '',
             icon: CustomImageView(
-              svgPath: bottomMenuList[index].icon,
+              svgPath: ImageConstant.imgSolaruserbrokendefault,
               height: getSize(
                 31,
               ),
               width: getSize(
                 31,
               ),
-              color: theme.colorScheme.primary,
+              color: Colors.black,
             ),
-            activeIcon: CustomImageView(
-              svgPath: bottomMenuList[index].activeIcon,
-              height: getVerticalSize(
-                36,
-              ),
-              width: getHorizontalSize(
-                34,
-              ),
-              color: theme.colorScheme.secondaryContainer,
-            ),
+          ),
+          BottomNavigationBarItem(
             label: '',
-          );
-        }),
+            icon: CustomImageView(
+              svgPath: ImageConstant.imgIconsaxlinearmessage,
+              height: getSize(
+                31,
+              ),
+              width: getSize(
+                31,
+              ),
+              color: Colors.black,
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: '',
+            icon: CustomImageView(
+              svgPath: ImageConstant.imgHome,
+              height: getSize(
+                31,
+              ),
+              width: getSize(
+                31,
+              ),
+              color: Colors.black,
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: '',
+            icon: CustomImageView(
+              svgPath: ImageConstant.imgSave,
+              height: getSize(
+                31,
+              ),
+              width: getSize(
+                31,
+              ),
+              color: Colors.black,
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: '',
+            icon: CustomImageView(
+              svgPath: ImageConstant.imgBasilmenuoutlinedefault,
+              height: getSize(
+                31,
+              ),
+              width: getSize(
+                31,
+              ),
+              color: Colors.black,
+            ),
+          )
+        ],
         onTap: (index) {
           selectedIndex = index;
-          widget.onChanged?.call(bottomMenuList[index].type);
+          if (selectedIndex == 0) {
+            print(index);
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ProfileScreen(),
+                ));
+          }
+          if (selectedIndex == 1) {
+            print(index);
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => MessagesScreen(),
+                ));
+          }
+          if (selectedIndex == 2) {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomeTabContainerScreen(),
+                ));
+          }
+          if (selectedIndex == 3) {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => PaymentScreen(),
+                ));
+          }
+          if (selectedIndex == 4) {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ThreeBarScreen(),
+                ));
+          }
           setState(() {});
+          print(index);
         },
       ),
     );

@@ -28,6 +28,7 @@ class PropertiesPageState extends State<PropertiesPage>
   bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     mediaQueryData = MediaQuery.of(context);
 
     return SafeArea(
@@ -38,9 +39,11 @@ class PropertiesPageState extends State<PropertiesPage>
           width: mediaQueryData.size.width,
           child: SingleChildScrollView(
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Expanded(
+                Flexible(
+                  fit: FlexFit.loose,
                   child: SizedBox(
                     width: double.maxFinite,
                     child: Padding(
@@ -50,6 +53,7 @@ class PropertiesPageState extends State<PropertiesPage>
                         right: 4,
                       ),
                       child: Column(
+                        mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           CustomSearchView(
@@ -171,7 +175,8 @@ class PropertiesPageState extends State<PropertiesPage>
                               ],
                             ),
                           ),
-                          Expanded(
+                          Flexible(
+                            fit: FlexFit.loose,
                             child: SizedBox(
                               height: getVerticalSize(
                                 313,
@@ -227,17 +232,19 @@ class PropertiesPageState extends State<PropertiesPage>
                                     style: CustomTextStyles.bodyLargeBlue700,
                                   ),
                                 ),
-                                CustomImageView(
-                                  svgPath: ImageConstant.imgArrowright,
-                                  height: getSize(
-                                    21,
-                                  ),
-                                  width: getSize(
-                                    21,
-                                  ),
-                                  margin: getMargin(
-                                    left: 6,
-                                    top: 1,
+                                Expanded(
+                                  child: CustomImageView(
+                                    svgPath: ImageConstant.imgArrowright,
+                                    height: getSize(
+                                      21,
+                                    ),
+                                    width: getSize(
+                                      21,
+                                    ),
+                                    margin: getMargin(
+                                      left: 6,
+                                      top: 1,
+                                    ),
                                   ),
                                 ),
                               ],

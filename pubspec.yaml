@@ -1,31 +1,32 @@
 name: sakuni
 description: A new Flutter project.
 version: 1.0.0+1
-environment: 
+environment:
   sdk: '>=2.12.0 <3.0.0'
-dependencies: 
-  flutter: 
-    sdk: flutter
+dependencies:
   cached_network_image: ^3.2.1
+  carousel_slider: ^4.0.0
+  dotted_border: 2.0.0+3
+  flutter:
+    sdk: flutter
+  flutter_rating_bar: ^4.0.0
   flutter_svg: ^1.1.6
   flutter_svg_provider: ^1.0.3
-  carousel_slider: ^4.0.0
-  smooth_page_indicator: ^1.0.0+2
-  readmore: ^2.1.0
-  flutter_rating_bar: ^4.0.0
-  dotted_border: 2.0.0+3
   intl: ^0.18.0
-dev_dependencies: 
-  flutter_test: 
+  readmore: ^2.1.0
+  riverpod: ^2.3.10
+  smooth_page_indicator: ^1.0.0+2
+dev_dependencies:
+  flutter_test:
     sdk: flutter
-flutter: 
+flutter:
   uses-material-design: true
-  assets: 
+  assets:
     - assets/
     - assets/images/
-  fonts: 
+  fonts:
     - family: Roboto
-      fonts: 
+      fonts:
         - asset: assets/fonts/RobotoRegular.ttf
           weight: 400
         - asset: assets/fonts/RobotoRomanMedium.ttf
@@ -33,35 +34,35 @@ flutter:
         - asset: assets/fonts/RobotoRomanRegular.ttf
           weight: 400
     - family: Inter
-      fonts: 
+      fonts:
         - asset: assets/fonts/InterRegular.ttf
           weight: 400
         - asset: assets/fonts/InterMedium.ttf
           weight: 500
     - family: Kanit
-      fonts: 
+      fonts:
         - asset: assets/fonts/KanitRegular.ttf
           weight: 400
     - family: Nunito
-      fonts: 
+      fonts:
         - asset: assets/fonts/NunitoBold.ttf
           weight: 700
         - asset: assets/fonts/NunitoExtraBold.ttf
           weight: 800
     - family: Outfit
-      fonts: 
+      fonts:
         - asset: assets/fonts/OutfitLight.ttf
           weight: 300
     - family: Vidaloka
-      fonts: 
+      fonts:
         - asset: assets/fonts/VidalokaRegular.ttf
           weight: 400
     - family: Risque
-      fonts: 
+      fonts:
         - asset: assets/fonts/RisqueRegular.ttf
           weight: 400
     - family: DM Sans
-      fonts: 
+      fonts:
         - asset: assets/fonts/DMSansBold.ttf
           weight: 700
         - asset: assets/fonts/DMSansMedium.ttf

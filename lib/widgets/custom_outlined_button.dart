@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sakuni/core/app_export.dart';
 import 'package:sakuni/widgets/base_button.dart';
 
 class CustomOutlinedButton extends BaseButton {

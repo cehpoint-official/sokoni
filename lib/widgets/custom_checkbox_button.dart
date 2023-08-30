@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sakuni/core/app_export.dart';
 
 class CustomCheckboxButton extends StatelessWidget {
   CustomCheckboxButton({

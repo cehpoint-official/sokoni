@@ -27,11 +27,6 @@ class PropertiesTabContainerScreenState
   void initState() {
     super.initState();
     tabviewController = TabController(length: 3, vsync: this);
-  }
-
-  @override
-  void initState() {
-    super.initState();
     frame17Controller = TabController(length: 4, vsync: this);
   }
 

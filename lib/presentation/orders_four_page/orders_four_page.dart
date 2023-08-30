@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sakuni/core/app_export.dart';
+import 'package:sakuni/presentation/filters_one_screen/filters_one_screen.dart';
+import 'package:sakuni/presentation/filters_screen/filters_screen.dart';
 import 'package:sakuni/widgets/custom_outlined_button.dart';
 import 'package:sakuni/widgets/custom_search_view.dart';
 
@@ -94,6 +96,13 @@ class OrdersFourPageState extends State<OrdersFourPage>
                             ),
                           ),
                           CustomOutlinedButton(
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(
+                                builder: (context) {
+                                  return FiltersOneScreen();
+                                },
+                              ));
+                            },
                             width: getHorizontalSize(
                               87,
                             ),

@@ -22,20 +22,21 @@ class List1ItemWidget extends StatelessWidget {
         199,
       ),
       child: Column(
-        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          CustomImageView(
-            imagePath: ImageConstant.imgRectangle3121120x188,
-            height: getVerticalSize(
-              120,
-            ),
-            width: getHorizontalSize(
-              188,
-            ),
-            margin: getMargin(
-              top: 4,
+          Expanded(
+            child: CustomImageView(
+              imagePath: ImageConstant.imgRectangle3121120x188,
+              height: getVerticalSize(
+                120,
+              ),
+              width: getHorizontalSize(
+                188,
+              ),
+              margin: getMargin(
+                top: 4,
+              ),
             ),
           ),
           Padding(
