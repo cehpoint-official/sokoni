@@ -77,7 +77,6 @@ class Listrectangle31ItemWidget extends StatelessWidget {
             padding: getPadding(
               left: 2,
               top: 4,
-              bottom: 9,
             ),
             child: Text(
               "Dec’ 27",

@@ -1,3 +1,5 @@
+import 'package:sakuni/presentation/product_details_two_tab_container_screen/product_details_two_tab_container_screen.dart';
+
 import '../home_page/widgets/listmobiles1_item_widget.dart';
 import '../home_page/widgets/listmobiles_item_widget.dart';
 import 'package:flutter/material.dart';
@@ -18,61 +20,450 @@ class HomePageState extends State<HomePage>
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
     return SafeArea(
-        child: Scaffold(
-            backgroundColor: Colors.transparent,
-            body: SizedBox(
-                width: mediaQueryData.size.width,
-                child: SingleChildScrollView(
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                      Padding(
-                          padding: getPadding(left: 11, top: 29, right: 1),
-                          child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.start,
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: SizedBox(
+          width: mediaQueryData.size.width,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: getPadding(left: 11, top: 29, right: 1),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                          height: getVerticalSize(130),
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
                               children: [
+                                InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              ProductDetailsTwoTabContainerScreen(),
+                                        ));
+                                  },
+                                  child: Container(
+                                    padding: getPadding(
+                                      left: 5,
+                                      right: 5,
+                                    ),
+                                    decoration: AppDecoration.fill3.copyWith(
+                                      borderRadius:
+                                          BorderRadiusStyle.roundedBorder10,
+                                    ),
+                                    width: getHorizontalSize(
+                                      120,
+                                    ),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        CustomImageView(
+                                          imagePath: ImageConstant.imgImage48,
+                                          height: getSize(
+                                            109,
+                                          ),
+                                          width: getSize(
+                                            109,
+                                          ),
+                                          onTap: () {
+                                            // onTapImgImagethirteen?.call();
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      ProductDetailsTwoTabContainerScreen(),
+                                                ));
+                                          },
+                                        ),
+                                        Padding(
+                                          padding: getPadding(
+                                            left: 28,
+                                            bottom: 5,
+                                          ),
+                                          child: Text(
+                                            "Mobiles",
+                                            overflow: TextOverflow.ellipsis,
+                                            textAlign: TextAlign.left,
+                                            style: theme.textTheme.bodyMedium,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
                                 SizedBox(
-                                    height: getVerticalSize(130),
-                                    child: ListView.separated(
-                                        scrollDirection: Axis.horizontal,
-                                        separatorBuilder: (context, index) {
-                                          return SizedBox(
-                                              width: getHorizontalSize(10));
+                                  width: 10,
+                                ),
+                                Container(
+                                  padding: getPadding(
+                                    left: 5,
+                                    right: 5,
+                                  ),
+                                  decoration: AppDecoration.fill3.copyWith(
+                                    borderRadius:
+                                        BorderRadiusStyle.roundedBorder10,
+                                  ),
+                                  width: getHorizontalSize(
+                                    120,
+                                  ),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      CustomImageView(
+                                        imagePath: ImageConstant.imgImage16,
+                                        height: getSize(
+                                          109,
+                                        ),
+                                        width: getSize(
+                                          109,
+                                        ),
+                                        onTap: () {
+                                          // onTapImgImagethirteen?.call();
                                         },
-                                        itemCount: 4,
-                                        itemBuilder: (context, index) {
-                                          return ListmobilesItemWidget(
-                                              onTapImgImagethirteen: () {
-                                            onTapImgImagethirteen(context);
-                                          });
-                                        })),
-                                Padding(
-                                    padding: getPadding(top: 19),
-                                    child: Text("Top Rated",
+                                      ),
+                                      Padding(
+                                        padding: getPadding(
+                                          left: 28,
+                                          bottom: 5,
+                                        ),
+                                        child: Text(
+                                          "Smart Watches",
+                                          overflow: TextOverflow.ellipsis,
+                                          textAlign: TextAlign.left,
+                                          style: theme.textTheme.bodyMedium,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Container(
+                                  padding: getPadding(
+                                    left: 5,
+                                    right: 5,
+                                  ),
+                                  decoration: AppDecoration.fill3.copyWith(
+                                    borderRadius:
+                                        BorderRadiusStyle.roundedBorder10,
+                                  ),
+                                  width: getHorizontalSize(
+                                    120,
+                                  ),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      CustomImageView(
+                                        imagePath: ImageConstant.imgImage19,
+                                        height: getSize(
+                                          109,
+                                        ),
+                                        width: getSize(
+                                          109,
+                                        ),
+                                        onTap: () {
+                                          // onTapImgImagethirteen?.call();
+                                        },
+                                      ),
+                                      Padding(
+                                        padding: getPadding(
+                                          left: 28,
+                                          bottom: 5,
+                                        ),
+                                        child: Text(
+                                          "Headphones",
+                                          overflow: TextOverflow.ellipsis,
+                                          textAlign: TextAlign.left,
+                                          style: theme.textTheme.bodyMedium,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Container(
+                                  padding: getPadding(
+                                    left: 5,
+                                    right: 5,
+                                  ),
+                                  decoration: AppDecoration.fill3.copyWith(
+                                    borderRadius:
+                                        BorderRadiusStyle.roundedBorder10,
+                                  ),
+                                  width: getHorizontalSize(
+                                    120,
+                                  ),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      CustomImageView(
+                                        imagePath: ImageConstant.imgImage18,
+                                        height: getSize(
+                                          109,
+                                        ),
+                                        width: getSize(
+                                          109,
+                                        ),
+                                        onTap: () {
+                                          // onTapImgImagethirteen?.call();
+                                        },
+                                      ),
+                                      Padding(
+                                        padding: getPadding(
+                                          left: 28,
+                                          bottom: 5,
+                                        ),
+                                        child: Text(
+                                          "Laptops",
+                                          overflow: TextOverflow.ellipsis,
+                                          textAlign: TextAlign.left,
+                                          style: theme.textTheme.bodyMedium,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          )),
+                      Padding(
+                          padding: getPadding(top: 19),
+                          child: Text("Top Rated",
+                              overflow: TextOverflow.ellipsis,
+                              textAlign: TextAlign.left,
+                              style: theme.textTheme.titleMedium)),
+                      SizedBox(
+                        height: getVerticalSize(143),
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: [
+                              Container(
+                                padding: getPadding(
+                                  left: 5,
+                                  right: 5,
+                                ),
+                                decoration: AppDecoration.fill3.copyWith(
+                                  borderRadius:
+                                      BorderRadiusStyle.roundedBorder10,
+                                ),
+                                width: getHorizontalSize(
+                                  120,
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    CustomImageView(
+                                      imagePath: ImageConstant.imgImage48,
+                                      height: getSize(
+                                        109,
+                                      ),
+                                      width: getSize(
+                                        109,
+                                      ),
+                                      onTap: () {
+                                        // onTapImgImagethirteen?.call();
+                                      },
+                                    ),
+                                    Padding(
+                                      padding: getPadding(
+                                        left: 28,
+                                        bottom: 5,
+                                      ),
+                                      child: Text(
+                                        "Mobiles",
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.left,
-                                        style: theme.textTheme.titleMedium)),
-                                SizedBox(
-                                    height: getVerticalSize(143),
-                                    child: ListView.separated(
-                                        padding: getPadding(top: 11),
-                                        scrollDirection: Axis.horizontal,
-                                        separatorBuilder: (context, index) {
-                                          return SizedBox(
-                                              width: getHorizontalSize(10));
-                                        },
-                                        itemCount: 4,
-                                        itemBuilder: (context, index) {
-                                          return Listmobiles1ItemWidget();
-                                        })),
-                                CustomImageView(
-                                    svgPath: ImageConstant.imgMenuLime500,
-                                    height: getVerticalSize(6),
-                                    width: getHorizontalSize(47),
-                                    margin: getMargin(top: 78))
-                              ]))
-                    ])))));
+                                        style: theme.textTheme.bodyMedium,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                padding: getPadding(
+                                  left: 5,
+                                  right: 5,
+                                ),
+                                decoration: AppDecoration.fill3.copyWith(
+                                  borderRadius:
+                                      BorderRadiusStyle.roundedBorder10,
+                                ),
+                                width: getHorizontalSize(
+                                  120,
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    CustomImageView(
+                                      imagePath: ImageConstant.imgImage23,
+                                      height: getSize(
+                                        109,
+                                      ),
+                                      width: getSize(
+                                        109,
+                                      ),
+                                      onTap: () {
+                                        // onTapImgImagethirteen?.call();
+                                      },
+                                    ),
+                                    Padding(
+                                      padding: getPadding(
+                                        left: 28,
+                                        bottom: 5,
+                                      ),
+                                      child: Text(
+                                        "Smart Watches",
+                                        overflow: TextOverflow.ellipsis,
+                                        textAlign: TextAlign.left,
+                                        style: theme.textTheme.bodyMedium,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                padding: getPadding(
+                                  left: 5,
+                                  right: 5,
+                                ),
+                                decoration: AppDecoration.fill3.copyWith(
+                                  borderRadius:
+                                      BorderRadiusStyle.roundedBorder10,
+                                ),
+                                width: getHorizontalSize(
+                                  120,
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    CustomImageView(
+                                      imagePath: ImageConstant.imgImage49,
+                                      height: getSize(
+                                        109,
+                                      ),
+                                      width: getSize(
+                                        109,
+                                      ),
+                                      onTap: () {
+                                        // onTapImgImagethirteen?.call();
+                                      },
+                                    ),
+                                    Padding(
+                                      padding: getPadding(
+                                        left: 28,
+                                        bottom: 5,
+                                      ),
+                                      child: Text(
+                                        "Headphones",
+                                        overflow: TextOverflow.ellipsis,
+                                        textAlign: TextAlign.left,
+                                        style: theme.textTheme.bodyMedium,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                padding: getPadding(
+                                  left: 5,
+                                  right: 5,
+                                ),
+                                decoration: AppDecoration.fill3.copyWith(
+                                  borderRadius:
+                                      BorderRadiusStyle.roundedBorder10,
+                                ),
+                                width: getHorizontalSize(
+                                  120,
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    CustomImageView(
+                                      imagePath: ImageConstant.imgImage18,
+                                      height: getSize(
+                                        109,
+                                      ),
+                                      width: getSize(
+                                        109,
+                                      ),
+                                      onTap: () {
+                                        // onTapImgImagethirteen?.call();
+                                      },
+                                    ),
+                                    Padding(
+                                      padding: getPadding(
+                                        left: 28,
+                                        bottom: 5,
+                                      ),
+                                      child: Text(
+                                        "Laptops",
+                                        overflow: TextOverflow.ellipsis,
+                                        textAlign: TextAlign.left,
+                                        style: theme.textTheme.bodyMedium,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      CustomImageView(
+                          svgPath: ImageConstant.imgMenuLime500,
+                          height: getVerticalSize(6),
+                          width: getHorizontalSize(47),
+                          margin: getMargin(top: 78))
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
   /// Navigates to the productDetailsTwoTabContainerScreen when the action is triggered.

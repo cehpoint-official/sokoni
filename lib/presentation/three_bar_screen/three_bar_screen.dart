@@ -928,7 +928,12 @@ class ThreeBarScreen extends StatelessWidget {
                                                   height: getVerticalSize(65),
                                                   text: "Payment",
                                                   margin: getMargin(right: 8),
-                                                  leftIcon: Icon(Icons.money),
+                                                  leftIcon: Container(
+                                                      margin:
+                                                          getMargin(right: 10),
+                                                      child: CustomImageView(
+                                                          svgPath: ImageConstant
+                                                              .imgTelevision)),
                                                   buttonStyle:
                                                       CustomButtonStyles
                                                           .outlineIndigo90001,
@@ -1012,9 +1017,12 @@ class ThreeBarScreen extends StatelessWidget {
                                                   height: getVerticalSize(65),
                                                   text: "Help & \nSupport",
                                                   margin: getMargin(right: 8),
-                                                  leftIcon: SvgPicture.string(
-                                                      ImageConstant
-                                                          .imgQuestion),
+                                                  leftIcon: Container(
+                                                      margin:
+                                                          getMargin(right: 10),
+                                                      child: CustomImageView(
+                                                          svgPath: ImageConstant
+                                                              .imgQuestion)),
                                                   buttonStyle:
                                                       CustomButtonStyles
                                                           .outlineIndigo90001,

@@ -1,4 +1,5 @@
 import 'package:sakuni/presentation/categories_screen/categories_screen.dart';
+import 'package:sakuni/presentation/details_screen/details_screen.dart';
 
 import '../services_page/widgets/services_item_widget.dart';
 import '../services_page/widgets/sliderrectangle_item_widget.dart';
@@ -101,37 +102,267 @@ class ServicesPageState extends State<ServicesPage>
                                     height: getVerticalSize(85),
                                     width: getHorizontalSize(412),
                                     margin: getMargin(left: 1, top: 10),
-                                    child: Stack(
-                                      alignment: Alignment.center,
-                                      children: [
-                                        CustomImageView(
-                                            imagePath: ImageConstant.imgImage40,
-                                            height: getVerticalSize(36),
-                                            width: getHorizontalSize(68),
-                                            alignment: Alignment.topRight,
-                                            margin:
-                                                getMargin(top: 13, right: 80)),
-                                        Align(
+                                    child: SingleChildScrollView(
+                                      scrollDirection: Axis.horizontal,
+                                      child: Row(
+                                        children: [
+                                          Align(
                                             alignment: Alignment.center,
-                                            child: ListView.separated(
-                                                physics:
-                                                    BouncingScrollPhysics(),
-                                                shrinkWrap: true,
-                                                separatorBuilder:
-                                                    (context, index) {
-                                                  return SizedBox(
-                                                      height:
-                                                          getVerticalSize(1));
-                                                },
-                                                itemCount: 5,
-                                                itemBuilder: (context, index) {
-                                                  return ServicesItemWidget(
-                                                      onTapColumnelectrici: () {
-                                                    onTapColumnelectrici(
-                                                        context);
-                                                  });
-                                                }))
-                                      ],
+                                            child: GestureDetector(
+                                              onTap: () {
+                                                // onTapColumnelectrici?.call();
+                                                Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          DetailsScreen(),
+                                                    ));
+                                              },
+                                              child: Container(
+                                                padding: getPadding(
+                                                  left: 9,
+                                                  top: 7,
+                                                  right: 9,
+                                                  bottom: 7,
+                                                ),
+                                                decoration: AppDecoration.fill2,
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  children: [
+                                                    CustomImageView(
+                                                      imagePath: ImageConstant
+                                                          .imgImage37,
+                                                      height: getVerticalSize(
+                                                        45,
+                                                      ),
+                                                      width: getHorizontalSize(
+                                                        53,
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding: getPadding(
+                                                        top: 8,
+                                                      ),
+                                                      child: Text(
+                                                        "Electricians",
+                                                        overflow: TextOverflow
+                                                            .ellipsis,
+                                                        textAlign:
+                                                            TextAlign.left,
+                                                        style: theme.textTheme
+                                                            .bodySmall,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          Align(
+                                            alignment: Alignment.center,
+                                            child: GestureDetector(
+                                              onTap: () {
+                                                // onTapColumnelectrici?.call();
+                                              },
+                                              child: Container(
+                                                padding: getPadding(
+                                                  left: 9,
+                                                  top: 7,
+                                                  right: 9,
+                                                  bottom: 7,
+                                                ),
+                                                decoration: AppDecoration.fill2,
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  children: [
+                                                    CustomImageView(
+                                                      fit: BoxFit.contain,
+                                                      imagePath: ImageConstant
+                                                          .imgImage38,
+                                                      height: getVerticalSize(
+                                                        45,
+                                                      ),
+                                                      width: getHorizontalSize(
+                                                        53,
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding: getPadding(
+                                                        top: 8,
+                                                      ),
+                                                      child: Text(
+                                                        "Plumbing",
+                                                        overflow: TextOverflow
+                                                            .ellipsis,
+                                                        textAlign:
+                                                            TextAlign.left,
+                                                        style: theme.textTheme
+                                                            .bodySmall,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          Align(
+                                            alignment: Alignment.center,
+                                            child: GestureDetector(
+                                              onTap: () {
+                                                // onTapColumnelectrici?.call();
+                                              },
+                                              child: Container(
+                                                padding: getPadding(
+                                                  left: 9,
+                                                  top: 7,
+                                                  right: 9,
+                                                  bottom: 7,
+                                                ),
+                                                decoration: AppDecoration.fill2,
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  children: [
+                                                    CustomImageView(
+                                                      fit: BoxFit.contain,
+                                                      imagePath: ImageConstant
+                                                          .imgImage39,
+                                                      height: getVerticalSize(
+                                                        45,
+                                                      ),
+                                                      width: getHorizontalSize(
+                                                        53,
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding: getPadding(
+                                                        top: 8,
+                                                      ),
+                                                      child: Text(
+                                                        "House Cleaning",
+                                                        overflow: TextOverflow
+                                                            .ellipsis,
+                                                        textAlign:
+                                                            TextAlign.left,
+                                                        style: theme.textTheme
+                                                            .bodySmall,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          Align(
+                                            alignment: Alignment.center,
+                                            child: GestureDetector(
+                                              onTap: () {
+                                                // onTapColumnelectrici?.call();
+                                              },
+                                              child: Container(
+                                                padding: getPadding(
+                                                  left: 9,
+                                                  top: 7,
+                                                  right: 9,
+                                                  bottom: 7,
+                                                ),
+                                                decoration: AppDecoration.fill2,
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  children: [
+                                                    CustomImageView(
+                                                      imagePath: ImageConstant
+                                                          .imgImage40,
+                                                      height: getVerticalSize(
+                                                        45,
+                                                      ),
+                                                      width: getHorizontalSize(
+                                                        53,
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding: getPadding(
+                                                        top: 8,
+                                                      ),
+                                                      child: Text(
+                                                        "Bathroom And Kitchen",
+                                                        overflow: TextOverflow
+                                                            .ellipsis,
+                                                        textAlign:
+                                                            TextAlign.left,
+                                                        style: theme.textTheme
+                                                            .bodySmall,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          Align(
+                                            alignment: Alignment.center,
+                                            child: GestureDetector(
+                                              onTap: () {
+                                                // onTapColumnelectrici?.call();
+                                              },
+                                              child: Container(
+                                                padding: getPadding(
+                                                  left: 9,
+                                                  top: 7,
+                                                  right: 9,
+                                                  bottom: 7,
+                                                ),
+                                                decoration: AppDecoration.fill2,
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  children: [
+                                                    CustomImageView(
+                                                      imagePath: ImageConstant
+                                                          .imgImage41,
+                                                      height: getVerticalSize(
+                                                        45,
+                                                      ),
+                                                      width: getHorizontalSize(
+                                                        53,
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding: getPadding(
+                                                        top: 8,
+                                                      ),
+                                                      child: Text(
+                                                        "Beauty",
+                                                        overflow: TextOverflow
+                                                            .ellipsis,
+                                                        textAlign:
+                                                            TextAlign.left,
+                                                        style: theme.textTheme
+                                                            .bodySmall,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          )
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -161,47 +392,49 @@ class ServicesPageState extends State<ServicesPage>
                                     ],
                                   ),
                                 ),
-                                TabBar(
-                                  controller: frame17Controller,
-                                  labelColor: Colors.black,
-                                  unselectedLabelColor: Colors.black,
-                                  tabs: [
-                                    Tab(
-                                      child: Text(
-                                        "Recently Viewed",
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ),
-                                    InkWell(
-                                      onTap: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  CategoriesScreen(),
-                                            ));
-                                      },
-                                      child: Tab(
-                                        child: Text(
-                                          "Categories",
-                                          overflow: TextOverflow.ellipsis,
+                                Container(
+                                    height: getVerticalSize(42),
+                                    width: getHorizontalSize(406),
+                                    margin: getMargin(top: 17),
+                                    child: TabBar(
+                                        indicator: BoxDecoration(
+                                          border:
+                                              Border.all(color: Colors.black),
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                          shape: BoxShape.rectangle,
+                                          color: Colors.blue,
                                         ),
-                                      ),
-                                    ),
-                                    Tab(
-                                      child: Text(
-                                        "Top Offer",
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ),
-                                    Tab(
-                                      child: Text(
-                                        "New",
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                                        isScrollable: true,
+                                        dividerColor: Colors.black,
+                                        controller: frame17Controller,
+                                        labelColor: Colors.black,
+                                        unselectedLabelColor: Colors.black,
+                                        tabs: [
+                                          Tab(
+                                              child: Text("Recently Viewed",
+                                                  overflow: TextOverflow.clip)),
+                                          InkWell(
+                                            onTap: () => Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      CategoriesScreen(),
+                                                )),
+                                            child: Tab(
+                                                child: Text("Categories",
+                                                    overflow:
+                                                        TextOverflow.ellipsis)),
+                                          ),
+                                          Tab(
+                                              child: Text("Top Offers",
+                                                  overflow:
+                                                      TextOverflow.ellipsis)),
+                                          Tab(
+                                              child: Text("New",
+                                                  overflow:
+                                                      TextOverflow.visible))
+                                        ])),
                                 Align(
                                     alignment: Alignment.bottomCenter,
                                     child: Container(
@@ -484,6 +717,183 @@ class ServicesPageState extends State<ServicesPage>
                                       CustomImageView(
                                           imagePath:
                                               ImageConstant.imgRectangle3121,
+                                          height: getVerticalSize(121),
+                                          width: getHorizontalSize(188)),
+                                      Padding(
+                                          padding: getPadding(top: 4),
+                                          child: Text(
+                                              "Lorem ipsum dolor sit ...",
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style: CustomTextStyles
+                                                  .bodyLarge16)),
+                                      Padding(
+                                          padding: getPadding(top: 4),
+                                          child: Text("TZS3000 . 2 hrs",
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style:
+                                                  theme.textTheme.titleMedium)),
+                                      Padding(
+                                          padding: getPadding(top: 4),
+                                          child: Text("Classic Cleaning Home",
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style:
+                                                  theme.textTheme.bodyMedium)),
+                                      Padding(
+                                          padding:
+                                              getPadding(top: 4, bottom: 5),
+                                          child: Row(children: [
+                                            CustomImageView(
+                                                svgPath: ImageConstant.imgEye,
+                                                height: getVerticalSize(12),
+                                                width: getHorizontalSize(68),
+                                                margin: getMargin(
+                                                    top: 1, bottom: 1)),
+                                            Padding(
+                                                padding:
+                                                    getPadding(left: 4, top: 1),
+                                                child: Text("(5.7K)",
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                    textAlign: TextAlign.left,
+                                                    style: theme.textTheme
+                                                        .labelMedium)),
+                                            CustomImageView(
+                                                svgPath:
+                                                    ImageConstant.imgSettings,
+                                                height: getSize(13),
+                                                width: getSize(13),
+                                                margin: getMargin(
+                                                    left: 23, top: 2)),
+                                            Padding(
+                                                padding: getPadding(bottom: 2),
+                                                child: Text("40% off",
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                    textAlign: TextAlign.left,
+                                                    style: CustomTextStyles
+                                                        .labelLargeBluegray400))
+                                          ]))
+                                    ]))
+                          ])),
+                      Padding(
+                          padding: getPadding(top: 18),
+                          child: Row(children: [
+                            Padding(
+                                padding: getPadding(top: 1),
+                                child: Text("Most Booked Services",
+                                    overflow: TextOverflow.ellipsis,
+                                    textAlign: TextAlign.left,
+                                    style: theme.textTheme.titleMedium)),
+                            Spacer(),
+                            Padding(
+                                padding: getPadding(top: 2, bottom: 2),
+                                child: Text("See All",
+                                    overflow: TextOverflow.ellipsis,
+                                    textAlign: TextAlign.left,
+                                    style: CustomTextStyles.bodyLargeBlue700)),
+                            CustomImageView(
+                                svgPath: ImageConstant.imgArrowright,
+                                height: getSize(21),
+                                width: getSize(21),
+                                margin: getMargin(left: 2, bottom: 3))
+                          ])),
+                      Padding(
+                          padding: getPadding(left: 2, top: 14),
+                          child: Row(children: [
+                            Container(
+                                padding: getPadding(
+                                    left: 5, top: 7, right: 5, bottom: 7),
+                                decoration: AppDecoration.fill1.copyWith(
+                                    borderRadius:
+                                        BorderRadiusStyle.roundedBorder6),
+                                child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      CustomImageView(
+                                          imagePath:
+                                              ImageConstant.imgRectangle3121,
+                                          height: getVerticalSize(121),
+                                          width: getHorizontalSize(188)),
+                                      Padding(
+                                          padding: getPadding(top: 4),
+                                          child: Text(
+                                              "Lorem ipsum dolor sit ...",
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style: CustomTextStyles
+                                                  .bodyLarge16)),
+                                      Padding(
+                                          padding: getPadding(top: 4),
+                                          child: Text("TZS3000 . 2 hrs",
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style:
+                                                  theme.textTheme.titleMedium)),
+                                      Padding(
+                                          padding: getPadding(top: 4),
+                                          child: Text("Fan Repair",
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style:
+                                                  theme.textTheme.bodyMedium)),
+                                      Padding(
+                                          padding:
+                                              getPadding(top: 4, bottom: 10),
+                                          child: Row(children: [
+                                            CustomImageView(
+                                                svgPath: ImageConstant.imgEye,
+                                                height: getVerticalSize(12),
+                                                width: getHorizontalSize(68),
+                                                margin: getMargin(
+                                                    top: 1, bottom: 1)),
+                                            Padding(
+                                                padding:
+                                                    getPadding(left: 4, top: 1),
+                                                child: Text("(5.7K)",
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                    textAlign: TextAlign.left,
+                                                    style: theme.textTheme
+                                                        .labelMedium)),
+                                            CustomImageView(
+                                                svgPath:
+                                                    ImageConstant.imgSettings,
+                                                height: getSize(13),
+                                                width: getSize(13),
+                                                margin: getMargin(
+                                                    left: 23, top: 2)),
+                                            Padding(
+                                                padding: getPadding(bottom: 2),
+                                                child: Text("40% off",
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                    textAlign: TextAlign.left,
+                                                    style: CustomTextStyles
+                                                        .labelLargeBluegray400))
+                                          ]))
+                                    ])),
+                            Container(
+                                margin: getMargin(left: 1),
+                                padding: getPadding(
+                                    left: 5, top: 7, right: 5, bottom: 7),
+                                decoration: AppDecoration.fill1.copyWith(
+                                    borderRadius:
+                                        BorderRadiusStyle.roundedBorder6),
+                                child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      CustomImageView(
+                                          imagePath:
+                                              ImageConstant.imgRectangle31212,
                                           height: getVerticalSize(121),
                                           width: getHorizontalSize(188)),
                                       Padding(

@@ -45,7 +45,7 @@ class ServicesItemWidget extends StatelessWidget {
                   top: 8,
                 ),
                 child: Text(
-                  "",
+                  "Electricians",
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.left,
                   style: theme.textTheme.bodySmall,

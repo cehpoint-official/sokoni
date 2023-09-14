@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:sakuni/core/app_export.dart';
 import 'package:sakuni/presentation/home_tab_container_screen/home_tab_container_screen.dart';
 import 'package:sakuni/presentation/messages_screen/messages_screen.dart';
+import 'package:sakuni/presentation/payment_one_screen/payment_one_screen.dart';
 import 'package:sakuni/presentation/payment_screen/payment_screen.dart';
+import 'package:sakuni/presentation/profile_one_screen/profile_one_screen.dart';
 import 'package:sakuni/presentation/profile_screen/profile_screen.dart';
+import 'package:sakuni/presentation/profile_two_screen/profile_two_screen.dart';
 import 'package:sakuni/presentation/three_bar_screen/three_bar_screen.dart';
 
 // ignore: must_be_immutable
@@ -149,7 +152,7 @@ class CustomBottomBarState extends State<CustomBottomBar> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ProfileScreen(),
+                  builder: (context) => ProfileTwoScreen(),
                 ));
           }
           if (selectedIndex == 1) {
@@ -171,7 +174,7 @@ class CustomBottomBarState extends State<CustomBottomBar> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => PaymentScreen(),
+                  builder: (context) => PaymentOneScreen(),
                 ));
           }
           if (selectedIndex == 4) {

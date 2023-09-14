@@ -47,6 +47,21 @@ class HomeTabContainerScreenState extends State<HomeTabContainerScreen>
   }
 
   TabBar get _tabBar => TabBar(
+      onTap: (value) {
+        if (value == 0) {
+          appbarColor = Colors.blue.shade900;
+          bgColor = Colors.blue.shade800;
+          setState(() {});
+        } else if (value == 1) {
+          appbarColor = Colors.green.shade800;
+          bgColor = Colors.green.shade800;
+          setState(() {});
+        } else {
+          appbarColor = Colors.orange.shade900;
+          bgColor = Colors.orange.shade800;
+          setState(() {});
+        }
+      },
       indicatorColor: Colors.yellow,
       labelColor: Colors.black,
       tabs: [
@@ -69,16 +84,11 @@ class HomeTabContainerScreenState extends State<HomeTabContainerScreen>
       child: Scaffold(
         backgroundColor: theme.colorScheme.primary,
         resizeToAvoidBottomInset: false,
-        appBar: AppBar(
-          backgroundColor: bgColor,
-          centerTitle: true,
-          title: Text('Sokoni'),
-          bottom: PreferredSize(
-            preferredSize: _tabBar.preferredSize,
-            child: Material(
-              color: appbarColor,
-              child: _tabBar,
-            ),
+        appBar: PreferredSize(
+          preferredSize: _tabBar.preferredSize,
+          child: Material(
+            color: appbarColor,
+            child: _tabBar,
           ),
         ),
         body: TabBarView(
@@ -470,14 +480,21 @@ class HomeTabContainerScreenState extends State<HomeTabContainerScreen>
                                   width: getHorizontalSize(406),
                                   margin: getMargin(top: 17),
                                   child: TabBar(
+                                      indicator: BoxDecoration(
+                                        border: Border.all(color: Colors.black),
+                                        borderRadius: BorderRadius.circular(8),
+                                        shape: BoxShape.rectangle,
+                                        color: Colors.blue,
+                                      ),
+                                      isScrollable: true,
+                                      dividerColor: Colors.black,
                                       controller: tabviewController,
-                                      labelColor: theme.colorScheme.primary,
-                                      unselectedLabelColor: appTheme.gray400,
+                                      labelColor: Colors.black,
+                                      unselectedLabelColor: Colors.black,
                                       tabs: [
                                         Tab(
                                             child: Text("Recently Viewed",
-                                                overflow:
-                                                    TextOverflow.ellipsis)),
+                                                overflow: TextOverflow.clip)),
                                         InkWell(
                                           onTap: () => Navigator.push(
                                               context,
@@ -496,8 +513,7 @@ class HomeTabContainerScreenState extends State<HomeTabContainerScreen>
                                                     TextOverflow.ellipsis)),
                                         Tab(
                                             child: Text("New",
-                                                overflow:
-                                                    TextOverflow.ellipsis))
+                                                overflow: TextOverflow.visible))
                                       ]))
                             ])),
                     SizedBox(
