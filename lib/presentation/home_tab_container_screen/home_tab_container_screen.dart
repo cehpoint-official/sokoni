@@ -106,17 +106,6 @@ class HomeTabContainerScreenState extends State<HomeTabContainerScreen>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Container(
-                                height: getVerticalSize(7),
-                                width: getHorizontalSize(88),
-                                margin: getMargin(left: 1),
-                                decoration: BoxDecoration(
-                                  color: appTheme.lime500,
-                                  borderRadius: BorderRadius.circular(
-                                    getHorizontalSize(3),
-                                  ),
-                                ),
-                              ),
                               InkWell(
                                 onTap: () {
                                   Navigator.push(
